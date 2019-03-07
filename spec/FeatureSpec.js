@@ -21,4 +21,14 @@ describe('', function() {
     expect(airport._landed).not.toContain(plane)
   });
 
+  it('prevent takeoff when weather is stormy', function() {
+    plane.land(airport)
+    expect(airport._landed).toContain(plane)
+
+    airport.weather_is_stormy = true;
+
+    plane.takeoff()
+    // take-off should be prevented
+    expect(airport._landed).not.toEqual([])
+  });
 });
