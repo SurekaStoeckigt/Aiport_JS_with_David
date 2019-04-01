@@ -36,6 +36,24 @@ describe('Plane', function() {
     plane.set_request("land")
     expect(plane.get_request()).toEqual("none")
   });
+
+  it('only accepts valid requests', function(){
+    plane = new Plane()
+    plane.set_request("take off")
+    expect(plane.get_request()).toEqual("take off")
+  });
+
+  it('only accepts valid requests', function(){
+    plane = new Plane("flying")
+    plane.set_request("take off")
+    expect(plane.get_request()).toEqual("none")
+  });
+
+  it('only accepts valid requests', function(){
+    plane = new Plane("flying")
+    plane.set_request("land")
+    expect(plane.get_request()).toEqual("land")
+  });
   });
 //   it('lands at an airport', function() {
 //     expect(plane.land().not.toBeUndefined()
