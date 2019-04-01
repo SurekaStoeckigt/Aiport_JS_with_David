@@ -1,21 +1,27 @@
-// use 'strict';
+'use strict';
+
+describe('Plane', function() {
+  var plane
+
 //
-// describe('Plane', function() {
-//   var plane;
-// });
+  // beforeEach(function() {
+  //   plane = new Plane();
+
 //
-//   beforeEach(function() {
-//     plane = new Plane();
-//   });
-//
+  it('tests the request to send to airport to takeoff', function() {
+    plane = new Plane()
+    plane.set_request("take off")
+    expect(plane._requested).toEqual("take off")
+  })
+  });
 //   it('lands at an airport', function() {
 //     expect(plane.land().not.toBeUndefined()
 //   });
 //
-//   // it("Is not flying when landed", function(){
-//   //   plane.land(airport);
-//   //   expect(plane.flying).toBe(false);
-//   // });
+  // it("Is not flying when landed", function(){
+  //   plane.land(airport);
+  //   expect(plane.flying).toBe(false);
+  // });
 //   //
 //   // it('Takes off from the airport', function(){
 //   //   plane.land(airport);
@@ -29,5 +35,3 @@
 //   //   plane.update_weather(weather);
 //   //   expect(function() { plane.takeoff(airport) }).toThrowError(msg);
 //   // });
-//
-// // });

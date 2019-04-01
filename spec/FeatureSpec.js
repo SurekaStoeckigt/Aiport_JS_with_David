@@ -1,6 +1,6 @@
 'use strict';
 
-describe('', function() {
+describe('Feature Test', function() {
   var plane;
   var airport;
 
@@ -35,16 +35,11 @@ describe('', function() {
   it('prevents landing when weather is stormy', function(){
 
       airport.weather_is_stormy = false;
-
       plane.land(airport)
       plane.takeoff()
-
       expect(airport._landed).toEqual([])
-
       airport.weather_is_stormy = true;
-
       plane.land(airport)
-
       expect(airport._landed).not.toContain(plane)
   });
 
