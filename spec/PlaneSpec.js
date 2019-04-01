@@ -1,23 +1,41 @@
 'use strict';
 
 describe('Plane', function() {
-  var plane
+  var plane;
 
 //
-  beforeEach(function() {
-    plane = new Plane()
-  });
+  // beforeEach(function() {
+  //   plane = new Plane()
+  // });
 //
+  it('default state is landed', function() {
+    plane = new Plane()
+    expect(plane._state).toEqual("landed")
+  })
+
   it('tests the request to send to airport to takeoff', function() {
+    plane = new Plane()
     plane.set_request("take off")
     expect(plane._requested).toEqual("take off")
   })
 
-  it('tests the request to send to airport to takeoff', function() {
+  it('tests the request to send to airport to land', function() {
+    plane = new Plane("flying")
     plane.set_request("land")
     expect(plane._requested).toEqual("land")
   })
 
+  it('tests the request to send to airport to land', function() {
+    plane = new Plane("flying")
+    plane.set_request("land")
+    expect(plane._requested).toEqual("land")
+  })
+
+  it('only accepts valid requests', function(){
+    plane = new Plane()
+    plane.set_request("land")
+    expect(plane.get_request()).toEqual("none")
+  });
   });
 //   it('lands at an airport', function() {
 //     expect(plane.land().not.toBeUndefined()

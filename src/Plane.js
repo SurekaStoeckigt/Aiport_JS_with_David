@@ -1,14 +1,22 @@
- function Plane(){
-  this._requested = null
+ function Plane(state = "landed"){
+  this._requested = "none"
   this._location = null;
-//  };
+  this._state = state;
+ // };
 //
 //   // this.flying = true
 //   // this.weather = weather
   Plane.prototype.set_request = function(action) {
-    this._requested = action
+    if ((this._state === "landed" && action === "land") || (this._state === "flying" && action === "take off")){
+      this._requested = "none"
+    } else {
+      this._requested = action
+    };
   };
 //
+Plane.prototype.get_request = function(){
+  return this._requested
+}
 // Plane.prototype.land = function(airport) {
 //   this.location = airport;
 //
