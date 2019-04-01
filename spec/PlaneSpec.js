@@ -4,15 +4,20 @@ describe('Plane', function() {
   var plane
 
 //
-  // beforeEach(function() {
-  //   plane = new Plane();
-
+  beforeEach(function() {
+    plane = new Plane()
+  });
 //
   it('tests the request to send to airport to takeoff', function() {
-    plane = new Plane()
     plane.set_request("take off")
     expect(plane._requested).toEqual("take off")
   })
+
+  it('tests the request to send to airport to takeoff', function() {
+    plane.set_request("land")
+    expect(plane._requested).toEqual("land")
+  })
+
   });
 //   it('lands at an airport', function() {
 //     expect(plane.land().not.toBeUndefined()

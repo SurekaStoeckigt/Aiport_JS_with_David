@@ -1,6 +1,6 @@
  function Plane(){
-  this._requested = ""
-  this._location = "";
+  this._requested = null
+  this._location = null;
 //  };
 //
 //   // this.flying = true
