@@ -12,5 +12,7 @@ function Airport(weather = new Weather()) {
      }
      return this._planesInAirport
    }
+  Aiport.prototype.takeOff = function(plane){    
+  }
 };
 // Airport.prototype.planes = function(){ airport;
