@@ -17,6 +17,16 @@
 Plane.prototype.get_request = function(){
   return this._requested
 }
+
+Plane.prototype.allow = function(){
+  if (this._requested == "land") {
+    this._state = "landed"
+  } else if (this._requested == "take off"){
+    this._state = "flying"
+  } else {
+
+  }
+}
 // Plane.prototype.land = function(airport) {
 //   this.location = airport;
 //

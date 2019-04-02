@@ -54,6 +54,13 @@ describe('Plane', function() {
     plane.set_request("land")
     expect(plane.get_request()).toEqual("land")
   });
+
+  it('allows plane to change state once a valid request is made', function(){
+    plane = new Plane(); //state == landed
+    plane.set_request("take off")
+    plane.allow()
+    expect(plane._state).toEqual("flying")
+  })
   });
 //   it('lands at an airport', function() {
 //     expect(plane.land().not.toBeUndefined()
