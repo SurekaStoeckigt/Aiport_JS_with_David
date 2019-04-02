@@ -7,7 +7,6 @@ function Airport(weather = new Weather()) {
      console.log(this._weather.forecast())
      if (this._weather.forecast() === "sunny" && this._planesInAirport.length < this._capacity){
        console.log(this._planesInAirport)
-
        this._planesInAirport.push(plane)
        plane.allow()
      }

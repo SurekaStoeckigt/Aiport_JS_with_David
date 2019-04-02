@@ -34,5 +34,12 @@ describe('Airport', function(){
     expect(airport._planesInAirport.length).toEqual(1)
   })
 
-
+  it('does no land plane in stormy weather', function(){
+    weather = new Weather("stormy")
+    spyOn(weather, 'forecast').and.returnValue("stormy")
+    airport = new Airport(weather)
+    plane = jasmine.createSpyObj('plane', ['set_request', 'get_request', 'allow'])
+    airport.land(plane)
+    expect(airport._planesInAirport.length).toEqual(0)
+  })
 });
