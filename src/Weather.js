@@ -1,17 +1,11 @@
-function Weather(){
+function Weather(weatherForecast = "sunny"){
 
-this._weatherForecast = "sunny";
+this._weatherForecast = weatherForecast;
 
 
-//
+
 Weather.prototype.forecast = function(){
-  return this._weatherForecast
-//   weather_num = rand(0..100)
-//     // if (weather_num < 80 ) {
-//     //   return "sunny"
-//     // } else {
-//     //   return "stormy"
-//     // };
-}
+    return this._weatherForecast
+  }
 
 };

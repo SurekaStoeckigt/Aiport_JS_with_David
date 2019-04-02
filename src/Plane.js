@@ -24,7 +24,6 @@ Plane.prototype.allow = function(){
   } else if (this._requested == "take off"){
     this._state = "flying"
   } else {
-
   }
 }
 // Plane.prototype.land = function(airport) {
