@@ -21,6 +21,7 @@ describe('Airport', function(){
         plane = jasmine.createSpyObj('plane', ['set_request', 'get_request', 'allow'])
         airport = new Airport(weather)
         airport.land(plane)
+        expect(weather.forecast).toHaveBeenCalled()
     // expect(airport._weather).toEqual("sunny")
     // expect(weather_obj.forecast()).toHaveBeenCalled()
   })
